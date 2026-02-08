@@ -28,7 +28,7 @@ inventory.push({"sku": "SKU-005", "name": "Webcam", "price": 49.99, "stock": 30}
 inventory.pop();
 inventory[1].price = 24.99;
 inventory[0].stock += 50;
-inventory[3].stock = 0; 
+//inventory[3].stock = 0; stockout test
 
 let orders = [
     {
