@@ -1,0 +1,1 @@
+This is an order manager that allows the user to track the stock of inventory to see if there is sufficient inventory to process incoming orders. A message will print when there is insufficent stock and when there is low stock (under 20 items).
