@@ -45,7 +45,7 @@ let orders = [
     }
     ]
 function processOrder(order) {
-    // First check if all items are in stock
+    //check if all items are in stock
     let allItemsAvailable = true;
     let shortItem = null;
     
@@ -64,7 +64,7 @@ function processOrder(order) {
         return `Order ${order.orderId} failed: Insufficient stock for item ${shortItem}.`;
     }
     
-    // All items available, decrement inventory and calculate order total
+    //All items available, decrement inventory and calculate order total
     let orderTotal = 0;
     
     order.items.forEach(item => {
@@ -76,27 +76,27 @@ function processOrder(order) {
     return `Order ${order.orderId} processed successfully. Total: $${orderTotal.toFixed(2)}`;
 }
 
-// Process all orders using forEach
+//Process orders
 console.log("Processing orders:");
 orders.forEach(order => {
     const result = processOrder(order);
     console.log(result);
 });
 
-// Use reduce() to compute and log total inventory value
+//total inventory value
 const totalInventoryValue = inventory.reduce((sum, product) => {
     return sum + (product.price * product.stock);
 }, 0);
 console.log(`\nTotal Inventory Value: $${totalInventoryValue.toFixed(2)}`);
 
-// Use filter() to create a list of low-stock items (stock <= 20)
+//list of low-stock items (stock <= 20)
 const lowStockItems = inventory.filter(product => product.stock <= 20);
 console.log("\nLow Stock Items (stock <= 20):");
 lowStockItems.forEach(item => {
     console.log(`  ${item.sku} - ${item.name}: ${item.stock} units`);
 });
 
-// Use map() to create a simple price list
+//simple price list
 const priceList = inventory.map(product => `${product.sku} — $${product.price.toFixed(2)}`);
 console.log("\nPrice List:");
 priceList.forEach(item => {
